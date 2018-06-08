@@ -15,6 +15,14 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  uniq_sides = [a,b,c].map {|i| i.to_f}.uniq.length
+  if uniq_sides == 1
+    return :equilateral
+  elsif uniq_sides == 2
+    return :isosceles
+  else
+    return :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
