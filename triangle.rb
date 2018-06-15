@@ -15,7 +15,14 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
-  uniq_sides = [a,b,c].map {|i| i.to_f}.uniq.length
+  sides = [a,b,c]
+  if sides.select{|side| side <= 0}.length > 0
+    raise TriangleError, "Triangles cannot have <= 0 side lengths"
+  elsif a+b <= c or a+c <= b or b+c <= a
+    raise TriangleError, "Triangle fails inequality test"
+  end
+
+  uniq_sides = sides.map {|i| i.to_f}.uniq.length
   if uniq_sides == 1
     return :equilateral
   elsif uniq_sides == 2
