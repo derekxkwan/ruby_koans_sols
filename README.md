@@ -2,4 +2,4 @@
 solutions to ruby koans
 
 
-Progress: 255/282
+Progress: 267/282
